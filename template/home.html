@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<title>Cafe Dashboard</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+input[type=submit] {
+background-color: orange;
+border: none;
+text-decoration: none;
+color: white;
+padding: 10px 10px;
+margin: 10px 10px;
+cursor: pointer;
+}
+</style>
+<body class="w3-light-grey">
+
+<!-- Top container -->
+<div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <span class="w3-bar-item w3-right">Cafe</span>
+</div>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+  <div class="w3-container w3-row">
+    <div class="w3-col s4">
+      <span style='font-size:30px;'>&#128105;</span>
+    </div>
+    <div class="w3-col s8 w3-bar">
+      <span>Welcome, <strong>Admin</strong></span><br>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+<body>
+<h1> Cafe Dashboard</h1>
+
+<form action = "highest">
+ <input type ="submit" value = "Highest Order Menu">
+ </form>
+ 
+ <form action = "lowest">
+ <input type ="submit" value = "Lowest Order Menu">
+ </form>
+ 
+ <form action = "daily">
+ <input type ="submit" value = "Daily Sales Report">
+ </form>
+ 
+  <form action = "monthly">
+ <input type ="submit" value = "Monthly Sales Report">
+ </form>
+ 
+  <form action = "weekly">
+ <input type ="submit" value = "Weekly Sales Report">
+ </form>
+ 
+ <form action = "total">
+ <input type ="submit" value = "Total Sales">
+ </form>
+ 
+  
+ <form action = "home">
+ <input type ="submit" value = "home">
+ </form>
+ 
+  </div>
+</nav>
+
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+  <!-- Header -->
+  <header class="w3-container" style="padding-top:22px">
+    <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
+  </header>
+
+   <div class="w3-row-padding w3-margin-bottom">
+    <div class="w3-quarter">
+      <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-plus w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>ADDED</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Nasi Goreng</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-blue w3-padding-16">
+        <div class="w3-left"><i class="fa fa-minus w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>REMOVED</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Nasi Kandar</h4>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="w3-container w3-teal w3-padding-16">
+        <div class="w3-left"><i class="fa fa-list w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3>Menu</h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>23</h4>
+      </div>
+    </div>
+  </div>
+    
+ 
+  <div class="w3-panel">
+    <div class="w3-row-padding" style="margin:0 -16px">
+      <div class="w3-twothird">
+        <h5>Top Order Menu</h5>
+        <table class="w3-table w3-striped w3-white">
+          <tr>
+            <td><i class="fa fa-caret-up w3-text-blue w3-large"></i></td>
+            <td>{{labels.0}}</td>
+            <td><i> RM : {{pri.0}}</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-caret-down w3-text-red w3-large"></i></td>
+            <td>{{labels.1}}</td>
+            <td><i> RM : {{pri.1}}</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-caret-up w3-text-blue w3-large"></i></td>
+            <td>{{labels.2}}</td>
+            <td><i> RM : {{pri.2}}</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-caret-down w3-text-red w3-large"></i></td>
+            <td>{{labels.3}}</td>
+            <td><i> RM : {{pri.3}}</i></td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-caret-up w3-text-blue w3-large"></i></td>
+            <td>{{labels.4}}</td>
+            <td><i> RM : {{pri.4}}</i></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="w3-container">
+    
+<h1>Order quantity</h1>
+<div id="size">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// <block:setup:1>
+const labels = {{labels | safe}}
+;
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'order quantity',
+    backgroundColor:
+      'rgb(54, 162, 235)', 
+
+    borderColor: 'rgb(0, 99, 132)',
+    data: {{data | safe }}
+  }]
+};
+// </block:setup>
+
+// <block:config:0>
+const config = {
+  type: 'bar',
+  data,
+  options: {}
+};
+// </block:config>
+
+module.exports = {
+  actions: [],
+  config: config,
+};
+</script>
+<script>
+  // === include 'setup' then 'config' above ===
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
+
+  </div>
+  <hr>
+<div class="w3-quarter">
+      <div class="w3-container w3-green w3-text-white w3-padding-16">
+        <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
+        <div class="w3-right">
+          <h3><p id= "result"></h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Total Order</h4>
+      </div>
+    </div>
+    
+
+<script>
+
+var data1 = {{data.0}};
+var data2 = {{data.1}};
+var data3 = {{data.2}};
+var data4 = {{data.3}};
+var data5 = {{data.4}};
+
+var total = parseFloat(data1) + parseFloat(data2) + parseFloat(data3) + parseFloat(data4) +  parseFloat(data5);
+
+document.getElementById("result").innerHTML = total;
+
+</script>
+
+ 
+  <!-- Footer -->
+  <footer class="w3-container w3-padding-16 w3-light-grey">
+    
+  </footer>
+
+  <!-- End page content -->
+</div>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>

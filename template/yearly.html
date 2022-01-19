@@ -1,0 +1,45 @@
+<h1>Yearly Sales Report</h1>
+<div id="size">
+  <canvas id="myChart"></canvas>
+</div>
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// <block:setup:1>
+const labels = {{labels | safe}}
+;
+const data = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: [
+      'rgb(54, 162, 235)',
+    ],
+    borderColor: 'rgb(0, 99, 132)',
+    data: {{data | safe }}
+  }]
+};
+// </block:setup>
+
+// <block:config:0>
+const config = {
+  type: 'line',
+  data,
+  options: {}
+};
+// </block:config>
+
+module.exports = {
+  actions: [],
+  config: config,
+};
+</script>
+<script>
+  // === include 'setup' then 'config' above ===
+
+  var myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+</script>
